@@ -1,6 +1,6 @@
 import java.util.*;
 /**
- * @author sna74849
+ * @author http://software-engineering-lab.com/
  *
  * Objectクラスは全てのクラスのスーパークラス
  * 配列でもObjectクラスの配列なら複数種類の基本データ及び参照型を扱える
@@ -60,7 +60,7 @@ public class Questionnaire {
             items = new Object[3];//配列を再定義する
             System.out.println("どれかキーを押すと継続します(0:入力の終了)");
         }
-
+        scan.close();
         /*
          * 体重は全ての回答者のデータの平均値を出すが、
          * 年齢は入力した回答者のデータだけを平均に含める。
@@ -76,7 +76,7 @@ public class Questionnaire {
                 totalWeight += (int) value[1];//int<-Objectに型変換
                 numWeight++;
                 if(value[2] == null) continue; //年齢がnullであれば年齢の累計処理をスキップする
-                totalAge += (Integer) value[2];//Integer<-Objectにアップキャスト
+                totalAge += (Integer) value[2];//Integer<-Objectにダウンキャスト
                 numAge++;
             }
 
